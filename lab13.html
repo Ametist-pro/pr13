@@ -1,73 +1,21 @@
-<!DOCTYPE html>
-<html>
+<script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <title></title>
-</head>
+  let action = prompt("Введите знак (+, *, **)");
+  let A = parseInt(prompt("Введите число(A)"));
+  let B = parseInt(prompt("Введите число(B)"));
+  let C = parseInt(prompt("Введите число(C)"));
 
-<body>
-  <h3>Сложение</h3>
-  <form id="frm">
-    <input type="text" id="a">
-    <input type="text" id="b">
-    <input type="button" value="send" onclick="Sum()">
-    <input type="text" id="c">
-  </form>
-  <h3>Умножение</h3>
-  <form id="frm1">
-    <input type="text" id="a">
-    <input type="text" id="b">
-    <input type="button" value="send" onclick="Umnoj()">
-    <input type="text" id="c">
-  </form>
-  <h3>Возведение в степень</h3>
-  <form id="frm2">
-    <input type="text" id="a">
-    <input type="text" id="b">
-    <input type="button" value="send" onclick="Stepen()">
-    <input type="text" id="c">
-  </form>
-  <script>
-    function Sum(a, b, c) {
-      a = Number(document.forms["frm"].elements["a"].value);
-      b = Number(document.forms["frm"].elements["b"].value);
-      c = Number(document.forms["frm"].elements["c"].value);
-      var summa = a + b;
-      if (summa <= c) {
-        alert(`Ваше число: ${summa}`);
-      } else {
-        var ost = summa % c;
-        alert(`Остаток от деления: ${ost}`);
-      }
-    }
-    function Umnoj(a, b, c) {
-      a = Number(document.forms["frm1"].elements["a"].value);
-      b = Number(document.forms["frm1"].elements["b"].value);
-      c = Number(document.forms["frm1"].elements["c"].value);
-      var summa = a * b;
-      if (summa <= c) {
-        alert(`Ваше число: ${summa}`)
-      } else {
-        var ost = summa % c;
-        alert(`Остаток от деления: ${ost}`);
-      }
-    }
-    function Stepen(a, b, c) {
-      a = Number(document.forms["frm2"].elements["a"].value);
-      b = Number(document.forms["frm2"].elements["b"].value);
-      c = Number(document.forms["frm2"].elements["c"].value);
-      var summa = a ** b;
-      if (summa <= c) {
-        alert(`Ваше число: ${summa}`)
-      } else {
-        var ost = summa % c;
-        alert(`Остаток от деления: ${ost}`);
-      }
-    }
-  </script>
-</body>
+  let result;
 
-</html>
+  if (action === "+") {
+    result = (A + B) % C;
+  } else if (action === "*") {
+    result = (A * B) % C;
+  } else if (action === "**") {
+    result = (A ** B) % C;
+  }
+
+  alert("Ваш результат: " + result);
+
+
+</script>
